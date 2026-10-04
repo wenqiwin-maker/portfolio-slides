@@ -353,7 +353,29 @@ export function initWaterText({ container, canvas, textElement, calm = 1 }) {
     // segment per line: canvas measurement drifts and would re-wrap a fitting line
     const domLines = Math.max(1, Math.round(hr.height / (lh / dpr)));
     const lines = [];
-    if (domLines === segments.length) {
+    // lines with their own font size: paint each block at its own size and box
+    const perBlock = blocks.length && blocks.some((b) => getComputedStyle(b).fontSize !== st.fontSize);
+    if (perBlock) {
+      for (const b of blocks) {
+        const bs = getComputedStyle(b);
+        const bfs = parseFloat(bs.fontSize) * dpr;
+        const bls = (parseFloat(bs.letterSpacing) || 0) * dpr;
+        const bws = (parseFloat(bs.wordSpacing) || 0) * dpr;
+        c.font = `${bs.fontWeight} ${bfs}px ${bs.fontFamily}`;
+        const txt = (upper ? b.textContent.toUpperCase() : b.textContent).trim();
+        const spaces = (txt.match(/ /g) || []).length;
+        const w = c.measureText(txt).width + bls * Math.max(0, txt.length - 1) + bws * spaces;
+        const br = b.getBoundingClientRect();
+        const by = (br.top - cr.top) * dpr;
+        const slack = maxW - w;
+        let x = align === "center" ? x0 + slack / 2 : align === "right" ? x0 + slack : x0;
+        for (const ch of txt) {
+          c.fillText(ch, x, by);
+          x += c.measureText(ch).width + bls + (ch === " " ? bws : 0);
+        }
+      }
+      c.font = `${st.fontWeight} ${fs}px ${st.fontFamily}`;
+    } else if (domLines === segments.length) {
       for (const seg of segments) lines.push(upper ? seg.toUpperCase() : seg);
     } else {
       for (const seg of segments) {

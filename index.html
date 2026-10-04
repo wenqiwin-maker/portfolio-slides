@@ -37,11 +37,11 @@
   </style>
 </helmet>
 
-<header style="position:fixed;top:0;left:0;right:0;width:100%;padding:16px 24px 0 24px;z-index:50;mix-blend-mode:difference">
+<header style="position:fixed;top:0;left:0;right:0;width:100%;padding:16px 24px 0 24px;z-index:50">
   <nav style="display:flex;align-items:flex-end;gap:21px">
     <a href="./" style="display: flex; align-items: center; gap: 4px; padding-bottom: 8px; width: 273px; padding-top: 8px">
-      <img src="logo.png" alt="Logo" width="35" height="37" style="width:35px;height:37px;object-fit:cover;filter:invert(1)">
-      <span style="font-family:'Martian Mono',ui-monospace,monospace;font-weight:600;font-size:24px;color:#ffffff">Qi Wen</span>
+      <img src="qw-logo.png?v=2" alt="Logo" width="37" height="37" style="width:37px;height:37px;object-fit:contain">
+      <span style="font-family:'Martian Mono',ui-monospace,monospace;font-weight:600;font-size:24px;color:#000000">Qi Wen</span>
     </a>
     </nav>
 </header>
@@ -49,18 +49,18 @@
 <main class="scroll-snap-container">
   <div ref="{{ heroRef }}" data-screen-label="Hero" class="hero-glass" style="position:relative;padding:64px 48px 56px 48px;height:100vh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#F4F1EA;cursor:url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'&gt;&lt;g fill='none' stroke='%23111' stroke-width='1.5' stroke-linecap='round'&gt;&lt;circle cx='20' cy='20' r='7.5' stroke-opacity='.85'/&gt;&lt;circle cx='20' cy='20' r='13' stroke-opacity='.35'/&gt;&lt;path d='M20 20 l4.6 0' stroke-opacity='.55'/&gt;&lt;path d='M5.5 20 l3 0M31.5 20 l3 0M20 5.5 l0 3M20 31.5 l0 3' stroke-opacity='.5'/&gt;&lt;/g&gt;&lt;/svg&gt;&quot;) 20 20, grab;-webkit-user-select:none;user-select:none">
     <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none"></canvas>
-    <div style="position:relative;z-index:3;flex:1 1 auto;min-height:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div style="position:relative;z-index:3;flex:1 1 auto;min-height:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;top:-10px">
     <div ref="{{ textRef }}" style="position:relative;z-index:2;width:100%;display:flex;justify-content:center">
-      <h1 style="text-align: center; max-width: min(1100px, 88vw); margin: 0 auto; font-family: 'Tiempos Text Regular','Tiempos Text',Georgia,'Times New Roman',serif; font-weight: 400; font-size: clamp(28px, 6.6vw, 136px); line-height: 0.94; letter-spacing: 0; word-spacing: 0.05em; text-transform: none"><span style="display:block;white-space:nowrap">I design systems.</span><span style="display:block;white-space:nowrap">Not screens.</span><span style="display:block;white-space:nowrap">And I build them.</span></h1>
+      <h1 style="text-align: center; max-width: min(1100px, 88vw); margin: 0 auto; font-family: 'Tiempos Text Regular','Tiempos Text',Georgia,'Times New Roman',serif; font-weight: 400; font-size: clamp(28px, 6.6vw, 136px); line-height: 1.08; letter-spacing: 0; word-spacing: 0.05em; text-transform: none"><span style="display:block;white-space:nowrap">Solving problems with</span><span style="display:block;white-space:nowrap;font-size:0.792em">users first, business in mind</span></h1>
     </div>
-    <div style="position:relative;z-index:3;margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Martian Mono',ui-monospace,monospace;font-weight:400;text-align:center">
-      <p style="margin: 0; font-size: 20px; line-height: 1.4; color: #00000099; font-family: Helvetica; font-weight: 300">Senior Product Designer · 11 years shipping at LinkedIn and Baidu</p>
-      <p style="margin: 0; font-size: 20px; line-height: 1.4; color: #00000099; font-family: Helvetica; font-weight: 300">Now designing and building AI products end to end.</p>
+    <div style="position:relative;z-index:3;margin-top:43px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Martian Mono',ui-monospace,monospace;font-weight:400;text-align:center">
+      <p style="margin: 0; font-size: 20px; line-height: 1.4; color: #00000099; font-family: Helvetica; font-weight: 300">10+ years in product design · Now expanding my practice</p>
+      <p style="margin: 0; font-size: 20px; line-height: 1.4; color: #00000099; font-family: Helvetica; font-weight: 300">in the U.S. through graduate study and AI-assisted design.</p>
     </div>
     </div>
     <div style="position:relative;z-index:3;flex:0 0 auto;margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;cursor:auto">
-      <a href="https://www.figma.com/proto/suSfoN0ECJ5eCPDHB7IGRL/Second-Case-study?node-id=441-10306&amp;t=WPEM20jJipgHI2AC-0&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=325%3A133606&amp;starting-point-node-id=441%3A10306" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid #00000033;border-radius:999px;font-family:'Martian Mono',ui-monospace,monospace;font-size:13px;font-weight:400;color:#000000;text-decoration:none;background:#F4F1EAcc;transition:background 200ms, color 200ms, border-color 200ms" style-hover="background:#000000;color:#F4F1EA;border-color:#000000">Career Help Community <span>↗</span></a>
-      <a href="https://www.figma.com/proto/FMhqNGw1uIHQYlF66yxYv9/Second-Case-study--Copy-?page-id=325%3A133606&amp;node-id=2019-6773&amp;m=draw&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;starting-point-node-id=441%3A10306&amp;t=aURiKjbVTPmVyryI-1" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid #00000033;border-radius:999px;font-family:'Martian Mono',ui-monospace,monospace;font-size:13px;font-weight:400;color:#000000;text-decoration:none;background:#F4F1EAcc;transition:background 200ms, color 200ms, border-color 200ms" style-hover="background:#000000;color:#F4F1EA;border-color:#000000">SimTalk · Figma <span>↗</span></a>
+      <a href="https://www.figma.com/proto/suSfoN0ECJ5eCPDHB7IGRL/Second-Case-study?node-id=441-10306&amp;t=WPEM20jJipgHI2AC-0&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=325%3A133606&amp;starting-point-node-id=441%3A10306" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 10px; padding: 14px 22px; border: 1px solid #00000033; border-radius: 999px; font-family: 'Martian Mono',ui-monospace,monospace; font-size: 12px; font-weight: 400; color: #000000E6; text-decoration: none; transition: background 200ms, color 200ms, border-color 200ms; padding-top: 10px; padding-bottom: 10px; background-color: #F8F7F4CC; border-color: #DBD7D1" style-hover="background:#000000;color:#F4F1EA;border-color:#000000">Career Help Community <svg width="12" height="12" viewBox="0 0 200 200" fill="none" style="display:block;flex:0 0 auto"><path d="M81.3291 28.9509C79.937 27.2911 77.9533 26.2386 75.7984 26.0166C73.6435 25.7945 71.4868 26.4203 69.7855 27.7613C68.0842 29.1023 66.972 31.0531 66.6845 33.2003C66.3971 35.3474 66.957 37.5221 68.2457 39.2634L68.6707 39.8009L120.275 100.001L68.6707 160.201C67.3086 161.789 66.594 163.832 66.6688 165.924C66.7437 168.015 67.6026 170.001 69.0749 171.488L69.5749 171.955C71.1634 173.317 73.2063 174.032 75.2976 173.957C77.3888 173.882 79.3753 173.023 80.8624 171.551L81.3291 171.051L137.579 105.426C138.794 104.009 139.497 102.225 139.577 100.361C139.657 98.496 139.109 96.6585 138.021 95.1425L137.579 94.5759L81.3291 28.9509Z" fill="currentColor"></path></svg></a>
+      <a href="https://www.figma.com/proto/FMhqNGw1uIHQYlF66yxYv9/Second-Case-study--Copy-?page-id=325%3A133606&amp;node-id=2019-6773&amp;m=draw&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;starting-point-node-id=441%3A10306&amp;t=aURiKjbVTPmVyryI-1" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 10px; padding: 14px 22px; border: 1px solid #00000033; border-radius: 999px; font-family: 'Martian Mono',ui-monospace,monospace; font-size: 12px; font-weight: 400; color: #000000E6; text-decoration: none; transition: background 200ms, color 200ms, border-color 200ms; padding-top: 10px; padding-bottom: 10px; background-color: #F8F7F4CC; border-color: #DBD7D1" style-hover="background:#000000;color:#F4F1EA;border-color:#000000">SimTalk · Figma <svg width="12" height="12" viewBox="0 0 200 200" fill="none" style="display:block;flex:0 0 auto"><path d="M81.3291 28.9509C79.937 27.2911 77.9533 26.2386 75.7984 26.0166C73.6435 25.7945 71.4868 26.4203 69.7855 27.7613C68.0842 29.1023 66.972 31.0531 66.6845 33.2003C66.3971 35.3474 66.957 37.5221 68.2457 39.2634L68.6707 39.8009L120.275 100.001L68.6707 160.201C67.3086 161.789 66.594 163.832 66.6688 165.924C66.7437 168.015 67.6026 170.001 69.0749 171.488L69.5749 171.955C71.1634 173.317 73.2063 174.032 75.2976 173.957C77.3888 173.882 79.3753 173.023 80.8624 171.551L81.3291 171.051L137.579 105.426C138.794 104.009 139.497 102.225 139.577 100.361C139.657 98.496 139.109 96.6585 138.021 95.1425L137.579 94.5759L81.3291 28.9509Z" fill="currentColor"></path></svg></a>
     </div>
   </div>
 
@@ -97,7 +97,7 @@
 
   async startCursor() {
     try {
-      const mod = await import("./crystal-cursor.js");
+      const mod = await import(new URL("./crystal-cursor.js", document.baseURI).href);
       const host = this.heroRef.current;
       if (host) this.destroyCursor = mod.initCrystalCursor(host);
     } catch (e) {
@@ -107,7 +107,7 @@
 
   async start() {
     try {
-      const mod = await import("./water-text.js");
+      const mod = await import(new URL("./water-text.js", document.baseURI).href);
       const container = this.heroRef.current;
       const canvas = this.canvasRef.current;
       const textElement = this.textRef.current;
