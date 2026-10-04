@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Qi Wen | Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;600;700&amp;family=Caveat:wght@400;500;600;700&amp;family=Pacifico&amp;family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; color: #000000; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    h1, h2, h3, h4, p, ul, ol, blockquote, figure { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: inherit; }
+    img { display: block; }
+    .scroll-snap-container { height: 100vh; overflow: hidden; }
+    html, body { height: 100%; overflow: hidden; }
+    .scroll-snap-container::-webkit-scrollbar { display: none; }
+    /* the whole block sits under the water sheet while it waits, then rises
+       through it: z-index climbs above the canvas as it clears */
+    @keyframes floatUp {
+      0%   { transform: scale(0.917); filter: blur(1.1px); }
+      55%  { filter: blur(0.45px); }
+      100% { transform: none; filter: none; }
+    }
+    /* the three.js crystal block stands in for the pointer inside the hero */
+    .hero-glass, .hero-glass * { cursor: none; -webkit-user-select: none; user-select: none; }
+  </style>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;width:100%;padding:16px 24px 0 24px;z-index:50;mix-blend-mode:difference">
+  <nav style="display:flex;align-items:flex-end;gap:21px">
+    <a href="./" style="display: flex; align-items: center; gap: 4px; padding-bottom: 8px; width: 273px; padding-top: 8px">
+      <img src="logo.png" alt="Logo" width="35" height="37" style="width:35px;height:37px;object-fit:cover;filter:invert(1)">
+      <span style="font-family:'Martian Mono',ui-monospace,monospace;font-weight:600;font-size:24px;color:#ffffff">Qi Wen</span>
+    </a>
+    </nav>
+</header>
+
+<main class="scroll-snap-container">
+  <div ref="{{ heroRef }}" data-screen-label="Hero" class="hero-glass" style="position:relative;padding:64px 48px 56px 48px;height:100vh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#F4F1EA;cursor:url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'&gt;&lt;g fill='none' stroke='%23111' stroke-width='1.5' stroke-linecap='round'&gt;&lt;circle cx='20' cy='20' r='7.5' stroke-opacity='.85'/&gt;&lt;circle cx='20' cy='20' r='13' stroke-opacity='.35'/&gt;&lt;path d='M20 20 l4.6 0' stroke-opacity='.55'/&gt;&lt;path d='M5.5 20 l3 0M31.5 20 l3 0M20 5.5 l0 3M20 31.5 l0 3' stroke-opacity='.5'/&gt;&lt;/g&gt;&lt;/svg&gt;&quot;) 20 20, grab;-webkit-user-select:none;user-select:none">
+    <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none"></canvas>
+    <div style="position:relative;z-index:3;flex:1 1 auto;min-height:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div ref="{{ textRef }}" style="position:relative;z-index:2;width:100%;display:flex;justify-content:center">
+      <h1 style="text-align: center; max-width: min(1100px, 88vw); margin: 0 auto; font-family: 'Tiempos Text Regular','Tiempos Text',Georgia,'Times New Roman',serif; font-weight: 400; font-size: clamp(28px, 6.6vw, 136px); line-height: 0.94; letter-spacing: 0; word-spacing: 0.05em; text-transform: none"><span style="display:block;white-space:nowrap">I design systems.</span><span style="display:block;white-space:nowrap">Not screens.</span><span style="display:block;white-space:nowrap">And I build them.</span></h1>
+    </div>
+    <div style="position:relative;z-index:3;margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Martian Mono',ui-monospace,monospace;font-weight:400;text-align:center">
+      <p style="margin: 0; font-size: 20px; line-height: 1.4; color: #00000099; font-family: Helvetica; font-weight: 300">Senior Product Designer · 11 years shipping at LinkedIn and Baidu</p>
+      <p style="margin: 0; font-size: 20px; line-height: 1.4; color: #00000099; font-family: Helvetica; font-weight: 300">Now designing and building AI products end to end.</p>
+    </div>
+    </div>
+    <div style="position:relative;z-index:3;flex:0 0 auto;margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;cursor:auto">
+      <a href="https://www.figma.com/proto/suSfoN0ECJ5eCPDHB7IGRL/Second-Case-study?node-id=441-10306&amp;t=WPEM20jJipgHI2AC-0&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=325%3A133606&amp;starting-point-node-id=441%3A10306" target="_top" style="display:flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid #00000033;border-radius:999px;font-family:'Martian Mono',ui-monospace,monospace;font-size:13px;font-weight:400;color:#000000;text-decoration:none;background:#F4F1EAcc;transition:background 200ms, color 200ms, border-color 200ms" style-hover="background:#000000;color:#F4F1EA;border-color:#000000">Career Help Community <span>↗</span></a>
+      <a href="https://www.figma.com/" target="_top" style="display:flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid #00000033;border-radius:999px;font-family:'Martian Mono',ui-monospace,monospace;font-size:13px;font-weight:400;color:#000000;text-decoration:none;background:#F4F1EAcc;transition:background 200ms, color 200ms, border-color 200ms" style-hover="background:#000000;color:#F4F1EA;border-color:#000000">SimTalk · Figma <span>↗</span></a>
+    </div>
+  </div>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;waterEffect&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Hero&quot;}, &quot;surfaceCalm&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0.3, &quot;max&quot;: 1.8, &quot;step&quot;: 0.1, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Hero&quot;}}">class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.heroRef = React.createRef();
+    this.canvasRef = React.createRef();
+    this.textRef = React.createRef();
+    this.destroy = null;
+    this.retries = 0;
+  }
+
+  componentDidMount() {
+    this.jumpToHash();
+    window.addEventListener('hashchange', this.jumpToHash);
+    this.startCursor();
+    if (this.props.waterEffect === false) return;
+    this.start();
+  }
+
+  jumpToHash = () => {
+    if (location.hash !== '#works') return;
+    const go = () => {
+      const s = document.getElementById('works');
+      const m = s && s.closest('main');
+      if (m) m.scrollTo({ top: s.offsetTop, behavior: 'smooth' });
+    };
+    requestAnimationFrame(go);
+    setTimeout(go, 300);
+  };
+
+  async startCursor() {
+    try {
+      const mod = await import("./crystal-cursor.js");
+      const host = this.heroRef.current;
+      if (host) this.destroyCursor = mod.initCrystalCursor(host);
+    } catch (e) {
+      console.error("Crystal cursor failed:", e);
+    }
+  }
+
+  async start() {
+    try {
+      const mod = await import("./water-text.js");
+      const container = this.heroRef.current;
+      const canvas = this.canvasRef.current;
+      const textElement = this.textRef.current;
+      if (!container || !canvas || !textElement) return;
+      const destroy = mod.initWaterText({
+        container,
+        canvas,
+        textElement,
+        calm: this.props.surfaceCalm ?? 1,
+      });
+      if (destroy) {
+        // the shader draws the headline; keep the DOM copy for editing only
+        textElement.style.opacity = "0";
+        // the paragraphs are drawn by the shader too, so hide the DOM copies
+        const host = textElement.parentElement;
+        if (host) host.querySelectorAll("p").forEach((p) => (p.style.opacity = "0"));
+        this.destroy = destroy;
+      } else if (this.retries < 4) {
+        // a lost/exhausted GL context can come back a moment later
+        this.retries++;
+        setTimeout(() => this.start(), 350);
+      } else {
+        canvas.style.display = "none";
+      }
+    } catch (e) {
+      console.error("Water hero failed:", e);
+      if (this.canvasRef.current) this.canvasRef.current.style.display = "none";
+    }
+  }
+
+  componentDidUpdate(prev) {
+    if (prev.waterEffect !== this.props.waterEffect || prev.surfaceCalm !== this.props.surfaceCalm) {
+      if (this.destroy) { this.destroy(); this.destroy = null; }
+      if (this.textRef.current) this.textRef.current.style.opacity = "";
+      if (this.props.waterEffect !== false) this.start();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.destroy) this.destroy();
+    if (this.destroyCursor) this.destroyCursor();
+  }
+
+  renderVals() {
+    return {
+      heroRef: this.heroRef,
+      canvasRef: this.canvasRef,
+      textRef: this.textRef,
+    };
+  }
+
+
+}</script>
+</body>
+</html>
